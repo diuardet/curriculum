@@ -30,14 +30,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Open Sans', sans-serif, arial;
-	background-image: url("../img/background.png");
-}
-.text-center {
-	text-align: center; /* Alineación */
-}
-h1 {
-
 }
 ol, ul {
 	list-style: none;
