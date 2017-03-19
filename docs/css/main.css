@@ -224,7 +224,7 @@ tr {
 }
 
 tr:hover td {
-  background: #d0dafd;
+  background: #aaa;
   color: #339;
 }
 
@@ -238,10 +238,10 @@ th {
   font-weight: bold;
   height: 20px;
   padding: 10px;
-  background: #b9c9fe;
-  border-top: 4px solid #aabcfe;
+  background: rgba(19,126,36,0.80);
+  border-top: 4px solid rgba(19,126,36,0.6);
   border-bottom: 1px solid #fff;
-  color: #039;
+  color: #000;
 }
 
 th.largo {
@@ -250,7 +250,7 @@ th.largo {
 
 td {
   padding: 8px;
-  background: #e8edff;
+  background: rgba(84,130,53,0.20);
   border-bottom: 1px solid #fff;
   color: #669;
   border-top: 1px solid transparent;
@@ -325,4 +325,9 @@ textarea {
 
 #boton:hover {
   cursor: pointer;
+}
+
+.validadores {
+  width: 100%
+  bottom: 10px;
 }

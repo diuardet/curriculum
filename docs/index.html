@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://js.arcgis.com/3.19/"></script>
     <script src="scripts/arriba.js"></script>
     <script src="scripts/ini.js"></script>
     <script src="scripts/edu.js"></script>
@@ -21,6 +22,25 @@
     <link rel="stylesheet" href="css/flechas.css">
     <link rel="stylesheet" href="css/descargar.css">
     <link rel="stylesheet" href="css/main.css">
+    <script>
+    require(["dojo/domReady!"], function() {
+      var cambio = document.getElementById("Contacto").innerHTML;
+      var puesto = "Envíame un email"
+      console.log("Me parece que hoy me apetece cambiar el '" + cambio + "' del formulario de contacto por '" + puesto +"'!!");
+      setTimeout ("document.getElementById('Contacto').innerHTML = 'Envíame un email'; console.log('Hecho!');", 5000);
+    });
+
+       // Google Drive edit -> https://goo.gl/L2ZBx6
+       var spreadsheetID = '1jIIa4faLfBVBRHHg2VMW7hbBndch1swZjBLU8YO4lc4',
+       spreadsheetTAB = 1,
+       spreadsheetURL = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/' + spreadsheetTAB + '/public/values';
+
+       var datos;
+       // Pedimos un recurso por AJAX usando JSON
+       $.getJSON( spreadsheetURL + '?alt=json', function( data ) {
+         console.log(data);
+       });
+     </script>
   </head>
 
   <body>
@@ -257,15 +277,15 @@
         <h3 id="Social">Puedes seguirme en:</h3>
         <table style="width:10%">
           <tr>
-            <td class="rrss"><a title="Facebook" href="https://www.facebook.com/diuardet"><img src="img/facebook.png" alt="Facebook" width="35" height="35"/></a></td>
-            <td class="rrss"><a title="Twitter" href="https://twitter.com/diuardet"><img src="img/twitter.png" alt="Twitter" width="35" height="35"/></a></td>
-            <td class="rrss"><a title="Linkedin" href="https://www.linkedin.com/in/diuardet"><img src="img/linkedin.png" alt="Linkedin" width="35" height="35"/></a></td>
-            <td class="rrss"><a title="GitHub" href="https://github.com/diuardet"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40"/></a></td>
+            <td class="rrss"><a title="Facebook" href="https://www.facebook.com/diuardet" target="_blank"><img src="img/facebook.png" alt="Facebook" width="35" height="35"/></a></td>
+            <td class="rrss"><a title="Twitter" href="https://twitter.com/diuardet" target="_blank"><img src="img/twitter.png" alt="Twitter" width="35" height="35"/></a></td>
+            <td class="rrss"><a title="Linkedin" href="https://www.linkedin.com/in/diuardet" target="_blank"><img src="img/linkedin.png" alt="Linkedin" width="35" height="35"/></a></td>
+            <td class="rrss"><a title="GitHub" href="https://github.com/diuardet" target="_blank"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40"/></a></td>
           </tr>
         </table>
         <br>
       </div>
-
+      <!-- Sé que el formulario no funciona. No está permitido en GitHub. Tendré que probar en otro host porque creo que sí funciona. -->
       <form class="formulario" action="scripts/enviar.php" method="post">
         <h2 id="Contacto">Contáctame</h2>
         <input type="text" name="Nombre" placeholder="Nombre" required>
@@ -273,6 +293,15 @@
         <textarea name="Mensaje" placeholder="Escriba aquí su mensaje" required></textarea>
         <input type="submit" name="enviar" value="Enviar" id="boton">
       </form>
+      <br>
+      <div class="validadores" align="center">
+        <table style="width:10%">
+          <tr>
+            <td class="rrss"><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiuardet.github.io%2Fcurriculum%2F" target="_blank"><img src="https://www.w3.org/Icons/valid-html401.png" alt="HTML Validator"></a></td>
+            <td class="rrss"><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://diuardet.github.io/curriculum/" target="_blank"><img src="https://jigsaw.w3.org/css-validator/images/vcss.png" alt="CSS3 Validator"></a></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
 </html>
