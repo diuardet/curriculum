@@ -1,28 +1,15 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.Principal{
-  width: 80%;
-  position: absolute;
-  left: 20%;
-  padding-left: 30px;
-  background: #eee;
-  transition: all 0.3s;
-  box-sizing: border-box;
-}
-
 .ir-arriba {
   display: none;
   padding: 15px;
-  background: #024959;
-  font-size: 30px;
+  background: #137e24;
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border-radius: 30px;
+  border-radius: 500px;
+  opacity: 0.7;
 }
 
 .ir-abajo {
@@ -61,12 +48,37 @@ body {
   border-radius: 30px;
 }
 
+.descargar {
+  padding: 15px;
+  background: #137e24;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 6.5%;
+  border-radius: 500px;
+  opacity: 0.7;
+}
+
 nav {
   position: fixed;
   width: 20%;
   height: 100%;
-  background-color: #2d2d2d;
-
+  border: 1.5px solid transparent;
+  border-left: none;
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 125%;
+  -moz-border-image: -moz-linear-gradient(top right, #548235 0%, #ffffff 40%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #548235 0%, #ffffff 40%);
+  border-image: linear-gradient(to bottom left, #548235 0%, #ffffff 40%);
+  border-image-slice: 1;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#92d050+0,92d050+25,92d050+100&0+0,0.35+25,0.4+100 */
+  background: -moz-linear-gradient(45deg, rgba(146,208,80,0) 0%, rgba(146,208,80,0.25) 25%, rgba(146,208,80,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(146,208,80,0) 0%,rgba(146,208,80,0.25) 25%,rgba(146,208,80,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(146,208,80,0) 0%,rgba(146,208,80,0.25) 25%,rgba(146,208,80,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0092d050', endColorstr='#6692d050',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .Menu_ul {
@@ -78,7 +90,7 @@ nav {
 .Menu_Foto {
   width: 100%;
   height: 150px;
-  border-bottom: 1px solid #323232;
+  border-bottom: 1px solid #548235;
   overflow: hidden;
   text-align: center;
 }
@@ -86,21 +98,20 @@ nav {
 .Menu_li {
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #323232;
+  border-bottom: 1px solid #548235;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
 p.Menu{
+  cursor: pointer;
   position: relative;
   padding: 16px;
-  padding-right: 25px;
   float: left;
-  color: white;
-  opacity: .6;
-  font-size: 1.2em;
-  transition: all 0.3s;
+  color: black;
+  opacity: .9;
+  font-size: 1em;
 }
 
 div.barra {
@@ -108,43 +119,133 @@ div.barra {
   height: 60px;
   width: 0px;
   background-color: #aaa;
-  opacity: .3;
+  opacity: .6;
   -webkit-transition: width .25s;
 }
 
 .Menu_li:hover div.barra {
-  width: 295px;
-  border-left: 5px solid #fff;
+  width: 100%;
+}
+
+div.borde {
+  position: absolute;
+  height: 60px;
+  width: 0px;
+  background-color: #137e24;
+  opacity: .7;
+  -webkit-transition: width .40s;
+}
+
+.Menu_li:hover div.borde {
+  width: 4%;
 }
 
 #Foto {
   width: 100px;
+  border-radius: 30px;
+}
+
+body {
+  background: #FFFFFF;
+}
+
+html, body, table, ul, li  {
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 125%;
+}
+
+h1, h2, h3, h4, h5, .Menu_li {
+  font-family: 'Droid Serif', serif;
+}
+
+.Principal{
+  width: 78%;
+  position: absolute;
+  left: 20%;
+  padding-left: 2%;
+}
+
+.encabezado {
+  width: 80%;
+  border-bottom: 1px dashed #737373;
+}
+
+.Tabla_encabezado{
+  width: 100%;
+  font-size: 110%;
+  line-height: 125%;
+}
+
+h1 {
+  color: #137e24;
+  font-size: 300%;
+  font-weight: bold;
+  padding: 15px;
+  padding-left: 40px;
+}
+
+h2 {
+  color: #000000;
+  font-size: 200%;
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+h3 {
+  color: #000000;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h4 {
+  color: #000000;
+  font-size: 125%;
+  font-weight: bold;
+  padding: 5px;
+}
+
+h5 {
+  color: #000000;
+  font-size: 110%;
+  font-weight: bold;
+  padding: 5px;
 }
 
 table {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  font-size: 12px;
-  width: 480px;
   text-align: left;
   border-collapse: collapse;
   }
 
-.encabezado {
-  width: 60%;
-  caption-side: bottom;
-}
-.encabezado th, .encabezado td {
+tr {
 
+}
+
+tr:hover td {
+  background: #d0dafd;
+  color: #339;
+}
+
+tr:hover td.rrss {
+  background: #ffffff;
+  color: #339;
 }
 
 th {
   font-size: 13px;
-  font-weight: normal;
-  padding: 8px;
+  font-weight: bold;
+  height: 20px;
+  padding: 10px;
   background: #b9c9fe;
   border-top: 4px solid #aabcfe;
   border-bottom: 1px solid #fff;
   color: #039;
+}
+
+th.largo {
+  text-align: center;
 }
 
 td {
@@ -153,9 +254,75 @@ td {
   border-bottom: 1px solid #fff;
   color: #669;
   border-top: 1px solid transparent;
+  line-height: 120%;
 }
 
-tr:hover td {
-  background: #d0dafd;
-  color: #339;
+td.rrss {
+  padding: 8px;
+  background: #ffffff;
+  border-bottom: 1px solid #fff;
+  color: #669;
+  border-top: 1px solid transparent;
+  line-height: 120%;
+}
+
+.Apartado {
+  width: 80%;
+  border-bottom: 1px dashed #737373;
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+ul.lista_a {
+  padding: 5px;
+  padding-left: 10px;
+  line-height: 175%;
+  list-style-type: disc;
+}
+
+ul.lista_b {
+  padding: 5px;
+  padding-left: 10px;
+  line-height: 175%;
+}
+
+li {
+
+}
+
+form {
+  width: 45%;
+  margin: auto;
+  background: rgba(84,130,53,0.40);
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px;
+  box-sizing: border-box;
+  border: none;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+#boton {
+  background: rgba(19,126,36,0.80);
+  height: 60px;
+  color: #fff;
+  padding: 20px;
+}
+
+#boton:hover {
+  cursor: pointer;
 }
