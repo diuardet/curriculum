@@ -112,6 +112,8 @@ p.Menu{
   color: black;
   opacity: .9;
   font-size: 1em;
+  word-wrap: break-word;
+  font-variant: small-caps;
 }
 
 div.barra {
